@@ -27,7 +27,7 @@ body {
 
 ::-webkit-scrollbar-thumb:vertical {
     background: white;
-    border-radius: 10px;    
+    border-radius: 10px;
 }
 
 h1,
@@ -118,10 +118,15 @@ p {
 }
 
 .site-links-box p {
+    color: white;
     margin-right: 0.5em;
     padding: 0.25em 0.75em;
     border: 1px solid transparent;
     cursor: pointer;
+}
+
+.site-links-box a{
+    text-decoration: none;
 }
 
 .site-links-box p:hover {
@@ -147,18 +152,54 @@ p {
     display: inline-flex;
 }
 
-.menu-icon{
-    width: 2em;
-    height: 2em;
-    float: right;
-    display: none;
-    margin-top: 1em;
-    margin-right: 1em;
-    cursor: pointer;
+.desktop-view a{
+    text-decoration: none;
 }
 
-.menu-icon:hover{
+
+/* solid header */
+
+.solid-header {
+    width: 100%;
+    height: 6em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    position: fixed;
+    z-index: 3;
+    background-color: white;
+}
+
+.solid-header p {
+    color: #626262;
+}
+
+.solid-header #contact-header-link {
+    color: #626262;
+    border: 1px solid deepskyblue;
+}
+
+.solid-header #contact-header-link:hover {
+    color: white;
+}
+
+/* menu icon - compact view */
+
+.menu-icon {
+    width: 3em;
+    height: 3em;
+    float: right;
+    display: none;
+    margin-top: 0.65em;
+    margin-right: 1em;
+    padding: 0.5em;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+}
+
+.menu-icon:hover {
     transform: scale(0.95);
+    background-color: rgba(0, 0, 0, 0.2);
     transition: all 0.30s ease-in-out;
 }
 
@@ -166,8 +207,7 @@ p {
     .desktop-view {
         display: none;
     }
-
-    .menu-icon{
+    .menu-icon {
         display: block;
     }
 }
@@ -175,20 +215,31 @@ p {
 /* drop-down menu */
 
 /* The side navigation menu */
+
 .home-menu {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 4; /* Stay on top */
-    top: 0; /* Stay at the top */
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 4;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
     left: 0;
-    background-color: rgba(47, 79, 79, 0.9); /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 1em; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    background-color: rgba(47, 79, 79, 0.9);
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 1em;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
 }
 
 /* The navigation menu links */
+
 .home-menu a {
     padding: 1em;
     text-decoration: none;
@@ -201,12 +252,14 @@ p {
 }
 
 /* When you mouse over the navigation links, change their color */
+
 .home-menu a:hover {
     background-color: tomato;
     transition: background-color 0.30s ease-in-out;
 }
 
 /* Position and style the close button (top right corner) */
+
 .home-menu .closebtn {
     padding: 0;
     font-size: 5em;
@@ -218,13 +271,15 @@ p {
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
 @media screen and (max-height: 700px) {
-    .home-menu {padding-top: 1em;}
-    .home-menu a {font-size: 1em;}
+    .home-menu {
+        padding-top: 1em;
+    }
+    .home-menu a {
+        font-size: 1em;
+    }
 }
-
-
-
 
 /* TOP SECTION */
 
@@ -534,4 +589,184 @@ p {
     color: #626262;
     text-align: center;
     background-color: #c4c4c4;
+}
+
+/* GALLERY */
+
+.gallery-box {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    display: inline-flex;
+    border-radius: 8px;
+    margin-top: 6em;
+}
+
+.gallery-menu {
+    width: 10%;
+    min-width: 15em;
+    height: auto;
+    padding: 1em 1em 2em 1em;
+    background-color: salmon;
+    display: block;
+    text-align: left;
+    user-select: none;
+}
+
+.compact-gallery-menu {
+    display: none;
+    width: 100%;
+    height: auto; 
+    border-style: none;
+    color: darkslategray;   
+    padding: 1em;
+    background-color: #d8d8d8;
+    margin-top: 7em;
+    margin-bottom: 1em;
+    position: fixed;
+    z-index: 3;
+}
+
+.compact-gallery-menu:hover,
+.compact-gallery-menu:focus{
+    color: white;
+    background-color: #484848;
+    transition: all 0.50s ease-in-out;
+}
+
+#first-select-option{
+    color: red;
+}
+
+@media only screen and (max-width: 700px) {
+    .gallery-box {
+        display: block;
+        margin-top: 9em;
+    }
+    .gallery-menu {
+        display: none;
+    }
+    .compact-gallery-menu {
+        display: block;
+    }
+}
+
+#gallery-menu-title {
+    color: white;
+    font-weight: bold;
+    padding-bottom: 1em;
+    border-bottom: 1px solid white;
+    text-transform: uppercase;
+    font-family: "Fjalla One", sans-serif;
+}
+
+.gallery-menu a {
+    text-decoration: none;
+}
+
+.gallery-menu a p {
+    color: white;
+    margin: 8px 0;
+}
+
+.gallery-menu a p:hover {
+    color: #626262;
+    cursor: pointer;
+}
+
+.gallery {
+    width: 100%;
+    ;
+    height: 100%;
+    display: table;
+    background-color: tomato;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0.5em;
+}
+
+.gallery-image {
+    width: 15em;
+    height: 15em;
+    object-fit: cover;
+    padding: 0.2em;
+    border-radius: 8px;
+    display: inline-flex;
+}
+
+.gallery-image:hover {
+    cursor: pointer;
+    transform: scale(0.975);
+    transition: all 0.30s ease-in-out;
+}
+
+
+/* image modal */
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 5; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(255,99,71); /* Fallback color */
+    background-color: rgba(255,99,71,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Add Animation */
+.modal-content {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: yellow;
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.5);
+    transition: all 0.30s ease-in-out;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
 }
