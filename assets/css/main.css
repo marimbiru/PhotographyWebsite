@@ -26,7 +26,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:vertical {
-    background: white;
+    background: #bbb;
     border-radius: 10px;
 }
 
@@ -591,26 +591,28 @@ p {
     background-color: #c4c4c4;
 }
 
-/* GALLERY */
+/* GALLERY PAGE - gallery.html */
 
 .gallery-box {
     width: 100%;
     height: auto;
     background-color: white;
     display: inline-flex;
-    border-radius: 8px;
     margin-top: 6em;
+    overflow: hidden;
 }
 
 .gallery-menu {
     width: 10%;
     min-width: 15em;
-    height: auto;
+    height: 100%;
+    border-radius: 5px;
     padding: 1em 1em 2em 1em;
-    background-color: salmon;
+    background-color: #f0f0f0;
     display: block;
     text-align: left;
     user-select: none;
+    position: static;
 }
 
 .compact-gallery-menu {
@@ -652,10 +654,10 @@ p {
 }
 
 #gallery-menu-title {
-    color: white;
+    color: #626262;
     font-weight: bold;
     padding-bottom: 1em;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #626262;
     text-transform: uppercase;
     font-family: "Fjalla One", sans-serif;
 }
@@ -665,24 +667,22 @@ p {
 }
 
 .gallery-menu a p {
-    color: white;
+    color: #626262;
     margin: 8px 0;
 }
 
 .gallery-menu a p:hover {
-    color: #626262;
+    color: black;
     cursor: pointer;
 }
 
 .gallery {
     width: 100%;
-    ;
     height: 100%;
     display: table;
-    background-color: tomato;
     overflow-x: hidden;
     overflow-y: auto;
-    padding: 0.5em;
+    padding: 0 0.5em 0.5em 0.5em;
 }
 
 .gallery-image {
@@ -770,3 +770,133 @@ p {
         width: 100%;
     }
 }
+
+
+/* OUR SERVICES PAGE - our-services.html */
+
+.box-title{
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 4em 0 2em 0;
+}
+
+.services{
+    display: table; 
+}
+
+.service-box{
+    width: calc(95% / 3);
+    height: auto;
+    margin: 0 1em 2em 0;
+    text-align: center;
+    display: inline-block;
+}
+
+.service-box img {
+    width: 8em;
+    height: 8em;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    animation: ScaleUpDown 2s linear 5;
+}
+
+@keyframes ScaleUpDown {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.service-box h3 {
+    margin-top: 2em;
+    text-transform: uppercase;
+}
+
+.service-box p {
+    text-align: justify;
+    padding: 0 1em;
+}
+
+/* quotes slideshow */
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    background: white;
+  }
+  
+  /* Slides */
+  .mySlides {
+    display: none;
+    padding: 80px;
+    text-align: center;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 16px;
+    color: #888;
+    font-weight: bold;
+    font-size: 40px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    position: absolute;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+  }
+  
+  /* The dot/bullet/indicator container */
+  .dot-container {
+      text-align: center;
+      padding: 20px;
+      background: white;
+      margin-bottom: 2em;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  /* Add a background color to the active dot/circle */
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Add an italic font style to all quotes */
+  q {
+      font-size: 30px;
+      font-style: italic;
+    }
+  
+  /* Add a blue color to the author */
+  .author {
+      color: tomato;
+    }
