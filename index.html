@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Muchiri Frames - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--link to font repository - google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Quicksand" rel="stylesheet">
+
+    <!--link to css file-->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
+
+    <!--link to jquery cdn-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="content">
+
+            <!-- website logo -->
+            <img class="website-logo" src="assets/images/website-logo.png" />
+
+            <!-- site links -->
+            <div class="site-links-box">
+
+                <div class="desktop-view">
+                    <a href="index.html">
+                        <p>Home</p>
+                    </a>
+                    <a href="our-services.html">
+                        <p>Our Services</p>
+                    </a>
+                    <a href="gallery.html">
+                        <p>Gallery</p>
+                    </a>
+                    <a href="#">
+                        <p>Blog</p>
+                    </a>
+                    <a href="#">
+                        <p id="contact-header-link">Contact</p>
+                    </a>
+                </div>
+
+                <!-- compact view menu icon -->
+                <img class="menu-icon" onclick="openNav()" src="assets/icons/menu-icon.svg" />
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!--home menu-->
+    <div id="home-menu" class="home-menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="our-services.html">Our Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+    </div>
+
+
+
+    <!-- landing page -->
+    <div id="top-page" class="page">
+
+        <!--top bg image-->
+        <div class="bg-image">
+            <img class="landing-image" src="assets/images/landing-page-image.jpg" />
+            <div class="shader"></div>
+        </div>
+
+        <div class="content">
+
+            <div class="content-container">
+                <h3 class="title">Best photography in Kenya</h3>
+                <hr class="title-line">
+
+                <p class="body-text">Muchiri Frames Kenya offers unique memory capturing and keeping services which are tied to cinematography,
+                    photography, branding and printing services. Muchiri Frames Kenya comprise of highly qualified professionals
+                    that uphold creativity and quality services.
+
+                </p>
+
+                <button class="btn-contact-trigger"> work with us</button>
+
+                <div class="down-arrow-box">
+                    <p>what we do</p>
+                    <img class="down-arrow bounce" src="assets/icons/down-arrow.svg" />
+                </div>
+
+            </div>
+
+        </div>
+        <!--end of content-->
+
+
+    </div>
+
+
+    <!-- 'what we do' page -->
+    <div class="page what-we-do-section">
+
+        <div class="content">
+
+            <h3 class="title">What We Do</h3>
+            <hr class="title-line">
+
+            <!-- cards box -->
+            <div class="cards-box">
+
+                <!-- corporate card -->
+                <div class="card">
+
+                    <!--bg image-->
+                    <img src="assets/images/corporate-image.jpg" />
+
+                    <div class="foreground-content">
+                        <h3 class="title">Corporates</h3>
+                        <button class="btn-view">View Gallery</button>
+                    </div>
+
+                </div>
+
+
+                <!-- cinematography card -->
+                <div class="card">
+
+                    <!--bg image-->
+                    <img src="assets/images/cinematography-image.jpg" />
+
+                    <div class="foreground-content">
+                        <h3 class="title">Cinematography</h3>
+                        <button class="btn-view">View Video</button>
+                    </div>
+
+                </div>
+
+
+                <!-- doumentary card -->
+                <div class="card">
+
+                    <!--bg image-->
+                    <img src="assets/images/documentary-image.jpg" />
+
+                    <div class="foreground-content">
+                        <h3 class="title">Documentaries</h3>
+                        <button class="btn-view">View Gallery</button>
+                    </div>
+
+                </div>
+
+
+                <!-- weddings/engagement card -->
+                <div class="card">
+
+                    <!--bg image-->
+                    <img src="assets/images/wedding-image.jpg" />
+
+                    <div class="foreground-content">
+                        <h3 class="title">Weddings and
+                            <br> Engagement</h3>
+                        <button class="btn-view">View Gallery</button>
+                    </div>
+
+                </div>
+
+
+                <!-- products/brands card -->
+                <div class="card">
+
+                    <!--bg image-->
+                    <img src="assets/images/product-image.jpg" />
+
+                    <div class="foreground-content">
+                        <h3 class="title">Products and
+                            <br> Brands</h3>
+                        <button class="btn-view">View Gallery</button>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+        <!--end of content-->
+
+    </div>
+    <!--end of 'what we do'-->
+
+
+    <!-- skills page -->
+    <div class="partial-page skill-section">
+
+        <div class="content">
+
+            <h3 class="title">Skills in Photo & Video</h3>
+            <hr class="title-line">
+
+            <p>Weddings</p>
+            <div class="skill-container">
+                <div class="skills wedding">99%</div>
+            </div>
+
+            <p>Corporate</p>
+            <div class="skill-container">
+                <div class="skills corporate">95%</div>
+            </div>
+
+            <p>Engagement</p>
+            <div class="skill-container">
+                <div class="skills engagement">97%</div>
+            </div>
+
+            <p>Traditional Wedding</p>
+            <div class="skill-container">
+                <div class="skills traditional-wedding">92%</div>
+            </div>
+
+        </div>
+        <!--end of content-->
+
+    </div>
+    <!--end of skills page-->
+
+
+    <!-- 'our clients' page -->
+    <div class="partial-page clients-page">
+
+        <div class="content">
+
+            <h3 class="title">Our Clients</h3>
+            <hr class="title-line">
+
+            <div class="clients-box">
+
+                <!-- client logo image -->
+                <img class="client-logo" src="assets/images/website-logo.png" />
+
+                <!--for presentation - to be deleted-->
+                <img class="client-logo" src="assets/images/website-logo.png" />
+                <img class="client-logo" src="assets/images/website-logo.png" />
+                <img class="client-logo" src="assets/images/website-logo.png" />
+                <img class="client-logo" src="assets/images/website-logo.png" />
+                <img class="client-logo" src="assets/images/website-logo.png" />
+                <img class="client-logo" src="assets/images/website-logo.png" />
+            </div>
+
+        </div>
+        <!--end of content-->
+
+    </div>
+
+
+    <!-- 'work with us' page -->
+    <div class="partial-page work-with-section">
+
+        <!-- bg image -->
+        <img src="assets/images/work-with-us-image.jpg" />
+
+        <button class="btn-contact-trigger"> work with us</button>
+
+    </div>
+
+
+    <!-- footer -->
+    <div class="footer">
+
+        <p>2017 Muchiri Frames Kenya. All Rights Reserved. A project by Andrew, Mari, Patrick and Ken.</p>
+
+    </div>
+
+
+    <!--JAVASCRIPT-->
+
+    <!--link to jquery cdn-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <script>
+        /* Set the width of the side navigation to full width */
+        function openNav() {
+            document.getElementById("home-menu").style.width = "100%";
+        }
+
+        /* Set the width of the side navigation to 0 */
+        function closeNav() {
+            document.getElementById("home-menu").style.width = "0";
+        }
+    </script>
+
+</body>
+
+</html>

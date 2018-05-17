@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Muchiri Frames - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--link to font repository - google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Quicksand" rel="stylesheet">
+
+    <!--link to css file-->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
+
+    <!--link to jquery cdn-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="solid-header">
+
+        <div class="content">
+
+            <!-- website logo -->
+            <img class="website-logo" src="assets/images/website-logo.png" />
+
+            <!-- site links -->
+            <div class="site-links-box">
+
+                <div class="desktop-view">
+                    <a href="index.html">
+                        <p>Home</p>
+                    </a>
+                    <a href="our-services.html">
+                        <p>Our Services</p>
+                    </a>
+                    <a href="gallery.html">
+                        <p>Gallery</p>
+                    </a>
+                    <a href="#">
+                        <p>Blog</p>
+                    </a>
+                    <a href="#">
+                        <p id="contact-header-link">Contact</p>
+                    </a>
+                </div>
+
+                <!-- compact view menu icon -->
+                <img class="menu-icon" onclick="openNav()" src="assets/icons/menu-icon.svg" />
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!--home menu-->
+    <div id="home-menu" class="home-menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="our-services.html">Our Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+    </div>
+
+
+    <!--compact gallery menu for small screens-->
+    <select class="compact-gallery-menu" name="category">
+        <option value="#" disabled id="first-select-option">Select category</option>
+        <option value="#">Corporates</option>
+        <option value="#">Cinematography</option>
+        <option value="#">Documentary</option>
+        <option value="#">Weddings and Engagement</option>
+        <option value="#">Products and Brands</option>
+    </select>
+
+
+    <!--body content-->
+    <div class="content" style="height: 100%;">
+
+        <!--gallery box-->
+        <div class="gallery-box">
+
+            <!--gallery menu-->
+            <div class="gallery-menu">
+
+                <p id="gallery-menu-title">Category</p>
+                <a href="#">
+                    <p>Corporates</p>
+                </a>
+                <a href="#">
+                    <p>Cinematography</p>
+                </a>
+                <a href="#">
+                    <p>Documentary</p>
+                </a>
+                <a href="#">
+                    <p>Weddings and Engagement</p>
+                </a>
+                <a href="#">
+                    <p>Products and Brands</p>
+                </a>
+
+            </div>
+
+            <!--gallery-->
+            <div class="gallery">
+
+                <!--the modal-->
+                <div id="modal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="image-on-modal">
+                </div>
+
+                <img id="gallery-image" class="gallery-image" src="assets/images/documentary-image.jpg" />
+                <img id="gallery-image" class="gallery-image" src="assets/images/documentary-image.jpg" />
+                <img id="gallery-image" class="gallery-image" src="assets/images/documentary-image.jpg" />
+                <img id="gallery-image" class="gallery-image" src="assets/images/documentary-image.jpg" />
+                <img id="gallery-image" class="gallery-image" src="assets/images/documentary-image.jpg" />
+                <img id="gallery-image" class="gallery-image" src="assets/images/documentary-image.jpg" />
+                <img id="gallery-image" class="gallery-image" src="assets/images/documentary-image.jpg" />
+                <img id="gallery-image" class="gallery-image" src="assets/images/documentary-image.jpg" />
+                <img id="gallery-image" class="gallery-image" src="assets/images/documentary-image.jpg" />
+                <img id="gallery-image" class="gallery-image" src="assets/images/documentary-image.jpg" />
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!--JAVASCRIPT-->
+
+    <!--link to jquery cdn-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <script>
+        /* Set the width of the side navigation to full width */
+        function openNav() {
+            document.getElementById("home-menu").style.width = "100%";
+        }
+
+        /* Set the width of the side navigation to 0 */
+        function closeNav() {
+            document.getElementById("home-menu").style.width = "0";
+        }
+
+        //////////////////////
+
+        // Get the modal
+        var modal = document.getElementById('modal');
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById('gallery-image');
+        var modalImg = document.getElementById("image-on-modal");
+        img.addEventListener('click', function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        });
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+        // When the user clicks on modal overlay, close the modal
+        modal.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        ///////////////////////
+    </script>
+
+</body>
+
+</html>
