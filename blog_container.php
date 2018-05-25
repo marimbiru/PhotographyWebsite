@@ -1,3 +1,20 @@
+<?php
+    include 'DBConnector.php';
+
+    $connection= new DBConnector;
+    $con=$connection->conn;
+     
+    if (!isset($_GET['id'])) {
+        header('location: blog.php');
+    }
+    else{
+        $blog_id=$_GET['id'];
+        $query="SELECT * FROM blog WHERE blog_id='$blog_id'";
+        $result_blog=mysqli_query($con,$query);
+        $blog_details=mysqli_fetch_assoc($result_blog);
+    }
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>

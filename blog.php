@@ -1,3 +1,30 @@
+<?php 
+	include 'DBConnector.php';
+
+	$connection= new DBConnector;
+	$con=$connection->conn;
+	$categ_id=null;
+	$result_categ=null;
+
+	if(isset($_GET['id'])){
+		$categ_id=(int)$_GET['id'];
+		$query="SELECT * FROM blog WHERE category_id=$categ_id";
+		$result_categ=mysqli_query($con,"SELECT category_name FROM blog_cateory WHERE category_id=$categ_id");
+	}
+	else{
+		$query="SELECT * FROM blog";
+	}
+
+	;
+	$result_blogs=mysqli_query($con,$query);
+	
+	//$blogs_array=mysqli_fetch_assoc($result_blogs);
+
+	
+	$query2="SELECT blog_category.category_id,blog_category.category_name,COUNT(blog.blog_id),blog_category.category_photo FROM blog_category,blog WHERE blog_category.category_id=blog.category_id GROUP BY blog_category.category_id";
+	$result_categories=mysqli_query($con,$query2); 
+	
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +65,7 @@
                         <p>Home</p>
                     </a>
                     <a href="#">
-                        <p>Our products</p>
+                        <p>Our Services</p>
                     </a>
                     <a href="gallery.html">
                         <p>Gallery</p>
@@ -64,36 +91,30 @@
 	<div class="blog-parent">
 		<div class="blog-main">
 			<h1 style="color: salmon; text-align: center">Blog</h1>
-			<div class="blog-card">
-				<div class="blog-card-image" style="background-image: url('assets/images/harusi.jpg');">
-				</div>
-				<div class="blog-card-desc">
-					<h3 style="margin: 2px; padding: 0px;">Blog Title 1</h3>
-					<div class="blog-card-desc-text">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+			<?php
+				if($result_categ!=null){
+					?><p>Filtered by : <?php echo $result_categ ?> category</p>
+					<a href="blog.php">remove filter</a><?php
+				}
+			?>
+			<?php foreach ($result_blogs as $blog) {
+				$link="blog_container.php/?id=".$blog['blog_id'];
+				$src="assets/images/".$blog['cover_photo'];?>
+				<div class="blog-card" style="font-size:13px;">
+					<div class="blog-card-image" style="background-image: url('<?php echo $src;?>');">
 					</div>
+				<div class="blog-card-desc" style="font-size:13px;padding-top:10px; ">
+					<a style="color:white;text-decoration: none;" href="<?php echo($link) ?>"><h3 style="margin: 2px; padding: 0px;"><?php echo $blog['title'] ?></h3></a>
+						<div class="blog-card-desc-text">
+							<pre style="color:white">Published on:<?php echo $blog['date_published']."<br><br>Published by author<br><br>";
+								// $sample=substr($blog['body_text'], 0, 20)."...";
+								// echo $sample; ?>
+							</pre>
+							
+						</div>
 				</div>
-			</div>
-			<div class="blog-card">
-				<div class="blog-card-image" style="background-image: url('assets/images/harusi.jpg');">
 				</div>
-				<div class="blog-card-desc">
-					<h3 style="margin: 2px; padding: 0px;">Blog Title 1</h3>
-					<div class="blog-card-desc-text">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-					</div>
-				</div>
-			</div>
-			<div class="blog-card">
-				<div class="blog-card-image" style="background-image: url('assets/images/harusi.jpg');">
-				</div>
-				<div class="blog-card-desc">
-					<h3 style="margin: 2px; padding: 0px;">Blog Title 1</h3>
-					<div class="blog-card-desc-text">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-					</div>
-				</div>
-			</div>
+			<?php } ?>
 		</div>
 
 		<div class="aside">
@@ -102,60 +123,19 @@
 			</div>
 			<div class="aside-content">
 				<div class="aside-content-inner">
-					<div class="mini-card">
-						<img src="assets/images/harusi.jpg">
-
-						<div class="mini-card-back">
-							<div class="mini-card-text">
-								<h2>Bridal Shower</h2>
+					<?php foreach ($result_categories as $categ) {
+						$link="blog.php/?id=".$categ['category_id'];
+						$src="assets/images/".$categ['category_photo'];?>
+						<div class="mini-card">
+								<img src="<?php echo $src; ?>">
+							<div class="mini-card-back">
+								<div class="mini-card-text">
+									<a style="color:white;text-decoration: none;" href="<?php echo($link); ?>"><h2><?php echo $categ['category_name']; ?></h2></a>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="mini-card">
-						<img src="assets/images/harusi.jpg">
-
-						<div class="mini-card-back">
-							<div class="mini-card-text">
-								<h2>Love of Life</h2>
-							</div>
-						</div>
-					</div>
-					<div class="mini-card">
-						<img src="assets/images/harusi.jpg">
-
-						<div class="mini-card-back">
-							<div class="mini-card-text">
-								<h2>Engagements</h2>
-							</div>
-						</div>
-					</div>
-					<div class="mini-card">
-						<img src="assets/images/harusi.jpg">
-
-						<div class="mini-card-back">
-							<div class="mini-card-text">
-								<h2>Just Lovely</h2>
-							</div>
-						</div>
-					</div>
-					<div class="mini-card">
-						<img src="assets/images/harusi.jpg">
-
-						<div class="mini-card-back">
-							<div class="mini-card-text">
-								<h2>Weddings</h2>
-							</div>
-						</div>
-					</div>
-					<div class="mini-card">
-						<img src="assets/images/harusi.jpg">
-
-						<div class="mini-card-back">
-							<div class="mini-card-text">
-								<h2>Baby Shower</h2>
-							</div>
-						</div>
-					</div>
+					<?php } ?>
+					
 					<div class="mini-card">
 						<img src="assets/images/harusi.jpg">
 
