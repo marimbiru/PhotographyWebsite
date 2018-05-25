@@ -141,6 +141,9 @@
     width: inherit;
     height: auto
 }
+.blog-content-header h1{
+    color:tomato;
+}
 .blog-content-body
 {
     width: inherit;
