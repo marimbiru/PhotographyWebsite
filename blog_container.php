@@ -3,15 +3,46 @@
 
     $connection= new DBConnector;
     $con=$connection->conn;
+
+    $prev_title=null;
+    $prev_address=null;
+    $next_title=null;
+    $next_address=null;
      
     if (!isset($_GET['id'])) {
         header('location: blog.php');
     }
     else{
-        $blog_id=$_GET['id'];
-        $query="SELECT * FROM blog WHERE blog_id='$blog_id'";
+        $blog_id=(int)$_GET['id'];
+        $query="SELECT blog_id, title, body_text, cover_photo, blog.category_id, date_published, date_updated,blog_category.category_name FROM blog,blog_category WHERE blog_id=$blog_id AND blog.category_id=blog_category.category_id";
         $result_blog=mysqli_query($con,$query);
-        $blog_details=mysqli_fetch_assoc($result_blog);
+        $blog_details=mysqli_fetch_object($result_blog);
+
+        $query_images="SELECT * FROM images WHERE blog_id=$blog_id";
+        $blog_images=mysqli_query($con,$query_images);
+
+        $follow=$blog_id+1;
+        $prev=$blog_id-1;
+
+        $blog_before=mysqli_fetch_object(mysqli_query($con,"SELECT * FROM blog WHERE blog_id=$prev"));
+        $blog_after=mysqli_fetch_object(mysqli_query($con,"SELECT * FROM blog WHERE blog_id=$follow"));
+
+        if($blog_before==NULL){
+            $prev_title="No previous blog";
+            $prev_address="blog_container.php?id=".$blog_id;
+        }else{
+            $prev_title=$blog_before->title;
+            $prev_address="blog_container.php?id=".$blog_before->blog_id;
+            
+        }
+        if($blog_after==NULL){
+            $next_title="No next blog";
+            $next_address="blog_container.php?id=".$blog_id;
+        }else{
+            $next_title=$blog_after->title;
+            $next_address="blog_container.php?id=".$blog_after->blog_id;
+        }
+        
     }
 
  ?>
@@ -43,6 +74,23 @@
 	<title>Blog-Blog Name</title>
 </head>
 <body>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+                  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+                  <script type="text/javascript" src="assets/slick/slick.min.js"></script>
+                    <script type="text/javascript">
+                        $(document).ready(function(){
+                          $('.blog-content-carousel').slick({
+                            arrows: true,
+                            accesibility: true,
+                            dots: true,
+                            infinite: true,
+                            speed: 500,
+                            fade: true,
+                            cssEase: 'linear',
+                            variableWidth: true
+                          });
+                        });
+                    </script>
 	<header class="solid-header">
         <div class="content">
             <!-- website logo -->
@@ -75,50 +123,45 @@
     </header>
     <div class="blog-container-main">
     	<div class="blog-container-content">
-    		<div class="blog-content-header" style="text-decoration-color: salmon;">
-    			<h1>Blog Title:</h1>
-                <p>Posted on:_______  by:_________  in category:_________</p>
+    		<div class="blog-content-header">
+                <h1 style:"color: tomato;"><?php echo $blog_details->title;
+                $detail="Posted on: ".$blog_details->date_published."  by: Admin in category:".$blog_details->category_name;?></h1>
+                <p><?php echo $detail ?></p>
     		</div>
     		<div class="blog-content-body">
     			<div class="blog-content-text">
-    				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus scelerisque mattis tortor posuere imperdiet. Nunc pretium sagittis est, quis finibus velit viverra at. Nullam auctor interdum blandit. Nam consequat metus quis ultricies vestibulum. Vivamus scelerisque elit eget aliquet ornare. Phasellus sed hendrerit quam. Morbi et nisi at tortor ultrices aliquam. Sed viverra neque vel commodo tempus. Donec in metus efficitur, pulvinar nulla sit amet, commodo elit. Etiam tempus dui vitae lacus placerat, et semper dolor tempus. Nulla facilisi. Nulla facilisis cursus sapien ac lacinia. In eget dictum neque. Curabitur tincidunt tellus et mi maximus aliquet.</p>
+    				<p style="margin-bottom:60px"><?php echo $blog_details->body_text; ?></p>
     			</div>
     			<div class="blog-content-carousel">
-    				<div><img src="assets/images/harusi.jpg"></div>
-    				<div><img src="assets/images/cinematography-image.jpg"></div>
-    				<div><img src="assets/images/harusi.jpg"></div>
-    				<div><img src="assets/images/wedding-image.jpg"></div>
-    				<div><img src="assets/images/cinematography-image.jpg"></div>
+                    <?php foreach ($blog_images as $image) { ?>
+                        <div>
+                            <h1></h1>
+                        </div>
+                        <div>
+                            <h1></h1>
+                        </div>  
+                        <div>
+                            <h1></h1>
+                        </div>  
+                        <div>
+                            <h1></h1>
+                        </div>  
+                        <div>
+                            <h1></h1>
+                        </div>     
+                    <?php } ?>
     			</div>
-
-                <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-                  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-                  <script type="text/javascript" src="assets/slick/slick.min.js"></script>
-                    <script type="text/javascript">
-                        $(document).ready(function(){
-                          $('.blog-content-carousel').slick({
-                            arrows: true,
-                            accesibility: true,
-                            dots: true,
-                            infinite: true,
-                            speed: 500,
-                            fade: true,
-                            cssEase: 'linear',
-                            variableWidth: true
-                          });
-                        });
-                    </script>
     		</div>
     	</div>
     	<div class="blog-container-footer">
             <div class="blog-container-link">
         		<div class="blog-container-link-left">
-        			<h3>Previous:</h3>
-        			<p><a href="">Link to last Blog</a></p>
+        			<h3 >Previous Blog:</h3>
+        			<p><a href="<?php echo $prev_address; ?>"><?php echo $prev_title;?></a></p>
         		</div>
         		<div class="blog-container-link-right">
-        			<h3>Next:</h3>
-        			<p><a href="">Link to next Blog</a></p>
+        			<h3>Next Blog:</h3>
+        			<p><a href="<?php echo $next_address; ?>"><?php echo $next_title;?></a></p>
         		</div>
             </div>
     		<div class="blog-container-footer-category">

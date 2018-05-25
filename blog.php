@@ -9,7 +9,9 @@
 	if(isset($_GET['id'])){
 		$categ_id=(int)$_GET['id'];
 		$query="SELECT * FROM blog WHERE category_id=$categ_id";
-		$result_categ=mysqli_query($con,"SELECT category_name FROM blog_cateory WHERE category_id=$categ_id");
+		$result_categ=mysqli_query($con,"SELECT category_name FROM blog_category WHERE category_id=$categ_id");
+
+		var_dump($result_categ);
 	}
 	else{
 		$query="SELECT * FROM blog";
@@ -92,13 +94,14 @@
 		<div class="blog-main">
 			<h1 style="color: salmon; text-align: center">Blog</h1>
 			<?php
-				if($result_categ!=null){
-					?><p>Filtered by : <?php echo $result_categ ?> category</p>
-					<a href="blog.php">remove filter</a><?php
+				if($result_categ){
+					$category=mysqli_fetch_object($result_categ);
+					?><p>Filtered by : <?php echo $category->category_name ?> category</p>
+					<a href="blog.php" style="color:lightsalmon;">Remove filter</a><?php
 				}
 			?>
 			<?php foreach ($result_blogs as $blog) {
-				$link="blog_container.php/?id=".$blog['blog_id'];
+				$link="blog_container.php?id=".$blog['blog_id'];
 				$src="assets/images/".$blog['cover_photo'];?>
 				<div class="blog-card" style="font-size:13px;">
 					<div class="blog-card-image" style="background-image: url('<?php echo $src;?>');">
@@ -124,7 +127,7 @@
 			<div class="aside-content">
 				<div class="aside-content-inner">
 					<?php foreach ($result_categories as $categ) {
-						$link="blog.php/?id=".$categ['category_id'];
+						$link="blog.php?id=".$categ['category_id'];
 						$src="assets/images/".$categ['category_photo'];?>
 						<div class="mini-card">
 								<img src="<?php echo $src; ?>">
