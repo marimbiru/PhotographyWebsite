@@ -1,0 +1,194 @@
+/*Blog Design*/
+.blog-parent
+{
+    padding-top:100px;
+    width: 80%;
+    margin:auto;
+    height: auto;
+    display: -webkit-box;
+    -webkit-box-orient:horizontal; 
+}
+.blog-main
+{
+    width: 60%;
+    height: inherit;
+    /*background-color: red;*/
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+    padding-bottom: 30px;     
+}
+.blog-card
+{
+    width:75%;
+    height: 500px;
+    margin: auto;
+    margin-top: 50px;
+    top: 25%;
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+    border-radius:10px,10px,10px,10px;
+    box-shadow: 5px 5px 5px;   
+}
+.blog-card-image
+{
+    width: auto;
+    height: 75%;
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+}
+
+.blog-card-desc
+{
+    padding: 7%;
+    width: auto;
+    height: 25%;
+    background-color: black;
+}
+.blog-card-desc-details{
+    width: 70px;
+    display: -webkit-box;
+    -webkit-box-orient:horizontal;
+}
+.blog-card-desc-details p{
+    margin: 2px;
+    padding: 2px;
+}
+.blog-card-desc-text{
+    width: auto;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: hidden; 
+}
+.aside
+{
+    width: 20%;
+    height: auto;
+    position: fixed;
+    margin-left: 10%;
+}
+.aside-title
+{
+    text-align: center;
+    height: auto;
+}
+.aside-content
+{
+    height: auto;
+    overflow-y: hidden;
+}
+.aside-content-inner
+{
+    height: 700px;
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+    overflow-y:auto;
+    width: 100%;
+    margin: auto;
+}
+.mini-card
+{
+    width: inherit;
+    height: 100px;
+    margin-top: 20px;
+    position: relative;
+    background-color: rgba(80, 79, 79, 0.9);
+}
+.mini-card img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .6;
+
+}
+.mini-card-text
+{
+    font-size: 20px;
+    color: white;
+    display: inline-block;
+    padding:5px;
+    top: 33px;
+    left: 30px;
+    z-index: 999;
+    position: absolute;
+    cursor: default; 
+}
+
+.mini-card img:hover
+{
+    opacity: 1;
+    transition: opacity .40s ease-in-out;
+}
+/*Blog Container Design*/
+.blog-container-main{
+    padding: 0em;
+    padding-top:150px;
+    width: 66%;
+    margin:auto;
+    height: auto;
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+}
+.blog-container-content{
+    width: 100%;
+    height: auto;
+    border-bottom-color: lightsalmon;
+    border-bottom-width: 2px;
+}
+.blog-content-header{
+    padding: 1em;
+    width: inherit;
+    height: auto
+}
+.blog-content-body
+{
+    width: inherit;
+    height: auto;
+}
+.blog-content-text{
+    width: inherit;
+    height: auto;
+}
+.blog-content-carousel{
+    width:inherit;
+    height: 300px;
+    background-color: black;
+}
+.blog-content-carousel img{
+    width: 100%;
+    height: 400px;
+}
+.blog-container-footer{
+    margin: 50px;
+    padding-top: 40px;
+    width: inherit;
+    height: auto;
+}
+.blog-container-link{
+    margin: auto;
+    width: 80%;
+    display: -webkit-box;
+    -webkit-box-orient:horizontal;
+}
+.blog-container-link a{
+    text-decoration: none;
+    color: salmon;
+}
+.blog-container-link-left{
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    margin-left: 0px;
+}
+.blog-container-link-right{
+    width: 50%;
+    height: 100%;
+    margin: auto;
+}
+
+
+/*Blog Container Design*/
+
+
+/*Blog Design*/
