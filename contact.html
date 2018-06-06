@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Muchiri Frames - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--link to font repository - google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Quicksand" rel="stylesheet">
+
+    <!--link to css file-->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+
+<body style="background-color: #f4f5f7;">
+
+<!-- HEADER -->
+<header class="solid-header">
+    <div class="content">
+        <!-- website logo -->
+        <img class="website-logo" src="assets/images/website-logo.png" />
+        <!-- site links -->
+        <div class="site-links-box">
+
+            <div class="desktop-view">
+                <a href="index.html">
+                    <p>Home</p>
+                </a>
+                <a href="#">
+                    <p>Our Services</p>
+                </a>
+                <a href="gallery.html">
+                    <p>Gallery</p>
+                </a>
+                <a href="#">
+                    <p>Blog</p>
+                </a>
+                <a href="#">
+                    <p id="contact-header-link">Contact</p>
+                </a>
+            </div>
+
+            <!-- compact view menu icon -->
+            <img class="menu-icon" onclick="openNav()" src="assets/icons/menu-icon.svg" />
+
+        </div>
+
+    </div>
+
+</header>
+
+<!--home menu-->
+<div id="home-menu" class="home-menu">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">Home</a>
+    <a href="#">Our Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact</a>
+</div>
+
+<!--compact gallery menu for small screens-->
+<select class="compact-gallery-menu" name="category">
+    <option value="#" disabled id="first-select-option">Select category</option>
+    <option value="#">Corporates</option>
+    <option value="#">Cinematography</option>
+    <option value="#">Documentary</option>
+    <option value="#">Weddings and Engagement</option>
+    <option value="#">Products and Brands</option>
+</select>
+
+<!--body content middle-->
+<div class="content box-title">
+    <br>
+    <br>
+    <br>
+
+    <!--box containing service boxes-->
+    <div class="container-contact100" style="column-count: 2; column-gap: 50px;">
+
+        <div class="wrap-contact100">
+            <br>
+            <span class="contact100-form-symbol">
+                <img src="images/icons/symbol-01.png" alt="SYMBOL-MAIL">
+            </span>
+            <form method="post" class="contact100-form validate-form flex-sb flex-w" action="php/contact.php">
+                <span class="contact100-form-title">
+                    Drop Us A Message
+                </span>
+
+                <div class="wrap-input100 validate-input" data-validate="Name is required">
+                    <input class="input100" type="text" name="name" placeholder="Name">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Email is required: e@a.z">
+                    <input class="input100" type="text" name="email" placeholder="Email">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Message is required">
+                    <textarea class="input100" type="" name="message" placeholder=".."></textarea>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn">
+                        Send
+                    </button>
+                </div>
+            </form>
+
+        </div>
+        <div class="wrap-contact100">
+            <br>
+            <span class="contact100-form-symbol">
+                <img src="images/icons/favicon.ico" alt="SYMBOL-MAIL">
+            </span>
+
+            <span class="contact100-form-title">
+                we do
+            </span> Weddings, Brides, Grooms, wedding engagements, wedding gowns, wedding rings, wedding photography,
+            <br>
+            <br>
+
+            <span class="contact100-form-title">
+            </span> Call : 0728 988830
+            <br> Email : muchiriframes@gmail.com
+            <br> Website : http://www.muchiriframes.com
+            <br>
+        </div>
+        <div>
+
+        </div>
+    </div>
+    <!--end of box containing service boxes-->
+</div>
+</body>
+
+</html>
