@@ -8,6 +8,7 @@ use App\gallery;
 use App\client_quotes;
 use App\client_logos;
 use App\skills;
+use App\contacts;
 
 class AdminController extends Controller
 {
@@ -26,6 +27,9 @@ class AdminController extends Controller
         //fetch gallery
         $gallery = gallery::all();
 
+        //fetch contacts
+        $contacts = contacts::all();
+
         $corporate_skills = skills::where('type', "corporate")->first();
         $cinematography_skills = skills::where('type', "cinematography")->first();
         $documentary_skills = skills::where('type', "documentary")->first();
@@ -34,6 +38,7 @@ class AdminController extends Controller
             
         return view('admin', [
             'references' => $references,
+            'contacts'=>$contacts,
             'quotes' => $quotes,
             'all_skills' => $all_skills,
             'gallery' => $gallery,
@@ -144,7 +149,6 @@ class AdminController extends Controller
         $client_quote->save();
 
         return redirect('/admin');
-
     }
 
     //remove selected quote
