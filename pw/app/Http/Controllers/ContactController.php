@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\contacts;
 
 class ContactController extends Controller
 {
@@ -13,6 +14,19 @@ class ContactController extends Controller
         $contacts = contacts::all();
             
         return view('contact', ['contacts' => $contacts]);
+    }
+
+
+    //Save inserted quotes
+    public function insertMessage(){
+
+        $message = new contacts();
+        $message->name = request('name');
+        $message->email = request('email');
+        $message->message = request('message');
+        $message->save();
+
+        return redirect('/contact')->with('status', 'Message submitted! We will contact you shortly');
     }
 
     //Show the form for creating a new resource

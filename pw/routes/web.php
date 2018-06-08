@@ -30,7 +30,7 @@ Route::get('/blog', function () {
 
 //Contact
 Route::get('/contact', function () {
-    return view('welcome');
+    return view('contact');
 });
 
 //About
@@ -47,6 +47,7 @@ Route::get('/admin', function () {
 Route::get('/admin', "AdminController@index");
 
 Route::post('/admin/gallery', "AdminController@insertToGallery");
+Route::post('/contact/message', "ContactController@insertMessage");
 Route::get('/admin/gallery/delete/{id}', "AdminController@deleteGalleryItem");
 Route::get('/admin/gallery/edit/{id}', "EditController@index");
 Route::post('/admin/gallery/edit/{id}', "EditController@editGalleryItem");

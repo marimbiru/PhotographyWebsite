@@ -17,7 +17,7 @@ class CreateContactsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email');
-            $table->string('description');
+            $table->string('message');
             $table->timestamps();
         });
     }
@@ -32,3 +32,4 @@ class CreateContactsTable extends Migration
         Schema::dropIfExists('contacts');
     }
 }
+3
