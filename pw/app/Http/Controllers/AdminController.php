@@ -9,6 +9,8 @@ use App\client_quotes;
 use App\client_logos;
 use App\skills;
 use App\contacts;
+use App\blog;
+use App\blog_categories;
 
 class AdminController extends Controller
 {
@@ -29,6 +31,9 @@ class AdminController extends Controller
 
         //fetch contacts
         $contacts = contacts::all();
+        //fetch blogs and blog categories
+        $blogs=blog::all();
+        $blog_categories=blog_categories::all();
 
         $corporate_skills = skills::where('type', "corporate")->first();
         $cinematography_skills = skills::where('type', "cinematography")->first();
@@ -46,7 +51,9 @@ class AdminController extends Controller
             'cinematography_skills' => $cinematography_skills,
             'documentary_skills' => $documentary_skills,
             'wedding_skills' => $wedding_skills,
-            'product_skills' => $product_skills
+            'product_skills' => $product_skills,
+            'blogs'=>$blogs,
+            'categories'=>$blog_categories
             ]);
 
     }
@@ -212,6 +219,61 @@ class AdminController extends Controller
 
         return redirect('/admin');
 
+    }
+
+    public function insertBlog(){
+        function seoUrl($string) {
+            //Lower case everything
+            $string = strtolower($string);
+            //Make alphanumeric (removes all other characters)
+            $string = preg_replace("/[^a-z0-9_\s-]/", "", $string);
+            //Clean up multiple dashes or whitespaces
+            $string = preg_replace("/[\s-]+/", " ", $string);
+            //Convert whitespaces and underscore to dash
+            $string = preg_replace("/[\s_]/", "-", $string);
+            return $string;
+        }
+
+        //get blog name
+        $blog_title= request('title');
+
+        //get blog text
+        $blog_body=request('description');
+
+         //get category name
+        $category_id = request('category');
+
+         //get new category name
+        $new_category_name = request('new_category');
+
+        $blog_image=request('content_image');
+        //file name
+        $image_filename =seoUrl($blog_title).'.'.$blog_image->getClientOriginalExtension();
+
+        //insert image into storage
+        Storage::disk('public')->put("blog-coverphotos/".$image_filename, file_get_contents($blog_image));
+ 
+        if($new_category_name != null){
+            //save new category
+            $new_category = new blog_categories();
+            $new_category->category_name = $new_category_name;
+            $new_category->category_photo= $image_filename;
+            Storage::disk('public')->put("category-photo/".$image_filename, file_get_contents($blog_image));
+            $new_category->save();
+            $category_id=$new_category->id;           
+        }
+        
+        //pass to db
+        $new_blog=new blog;
+
+        $new_blog->title=$blog_title;
+        $new_blog->body_text=$blog_body;
+        $new_blog->cover_photo=$image_filename;
+        $new_blog->category_id=$category_id;
+        
+        $new_blog->save();
+
+        return redirect('/admin');
     }
 
 }

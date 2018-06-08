@@ -19,8 +19,8 @@
 }
 .blog-card
 {
-    width:75%;
-    height: 500px;
+    width:85%;
+    height: 700px;
     margin: auto;
     margin-top: 50px;
     top: 25%;
@@ -32,7 +32,7 @@
 .blog-card-image
 {
     width: auto;
-    height: 75%;
+    height: 70%;
     background-repeat: none;
     background-position: center;
     background-size: cover;
@@ -42,8 +42,19 @@
 {
     padding: 7%;
     width: auto;
-    height: 25%;
+    height: auto;
     background-color: black;
+}
+
+.blog-card-desc a
+{
+    text-decoration: none;
+    color:rgba(247, 73, 54, 0.939);
+}
+.blog-card-desc a:hover
+{
+    text-decoration: none;
+    color:salmon;
 }
 .blog-card-desc-details{
     width: 70px;
@@ -53,6 +64,8 @@
 .blog-card-desc-details p{
     margin: 2px;
     padding: 2px;
+    padding-bottom: 5px;
+    color:white;
 }
 .blog-card-desc-text{
     width: auto;
@@ -147,8 +160,17 @@
     height: auto;
 }
 .blog-content-text{
-    width: inherit;
+    width: 80%;
+    margin:auto;
     height: auto;
+}
+.banner-image{
+    height:200px;
+    width:inherit;
+}
+
+.blog-title{
+    color: salmon;
 }
 .blog-content-carousel{
     width:inherit;

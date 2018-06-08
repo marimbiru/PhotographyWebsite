@@ -112,7 +112,7 @@
 
         <div id="upload-to-blog" class="tabcontent">
 
-            <form method="post" action="/admin" enctype="multipart/form-data">
+            <form method="post" action="/admin/blog" enctype="multipart/form-data">
             {{csrf_field()}}
 
                 <div class="input-box">
@@ -123,7 +123,9 @@
                 <div class="input-box">
                     <p>Blog category</p>
                     <Select name="category">
-                        <option value=/""></option>
+                        @foreach ($categories as $blog_category)
+                        <option value="{{ $blog_category->id }}">{{ $blog_category->category_name }}</option>    
+                        @endforeach
                     </Select><br>
                     <input class="input" type="text" placeholder="Create new category" name="new_category">
                 </div>
@@ -156,21 +158,19 @@
                     <th style="text-align: center;">Image</th>
                     <th colspan="3">info</th>
                 </tr>
-
-                <tr>
-                    <td><img src="" /></td>
-                    <td class="info">
-                        <h3 class="portfolio-title"></h3>
-                        <p class="portfolio-description"><br><span class="portfolio-date"></span></p>
-                        <div>
-                            <form method="#" action="#">
-                                <button class="submit-button" type="submit">Edit</button>
-                                <button class="submit-button" type="submit">Delete</button>
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-
+                @foreach ($blogs as $blog)    
+                    <tr>
+                    <td><img src="{{asset('storage/blog-coverphotos'.$blog->cover_photo)}}" /></td>
+                        <td class="info">
+                            <h3 class="portfolio-title">{{$blog->title}}</h3>
+                        <p class="portfolio-description">{{str_limit($blog->body_text,$limit=200,' ...')}}<br><span class="portfolio-date">{{$blog->created_at}}</span></p>
+                            <div>
+                            <a href="/admin/blog/edit/{{$blog->id}}"><button class="submit-button">Edit</button></a>
+                            <a href="/admin/blog/delete/{{$blog->id}}"><button class="submit-button">Delete</button></a>
+                            </div>
+                        </td>
+                    </tr>
+                @endforeach
             </table>
 
         </div>

@@ -24,9 +24,8 @@ Route::get('/gallery/{category}',"GalleryController@show");
 Route::get('/services', "ClientQuotesController@index");
 
 //Blog
-Route::get('/blog', function () {
-    return view('welcome');
-});
+Route::get('/blog','BlogController@show_all');
+Route::get('/blog/{id}','BlogController@index');
 
 //Contact
 Route::get('/contact', function () {
@@ -59,6 +58,11 @@ Route::get('/admin/quotes/remove/{id}', "AdminController@removeQuote");
 
 Route::post('/admin/reference', "AdminController@insertReference");
 Route::get('/admin/reference/remove/{image_name}', "AdminController@removeReference");
+
+Route::post('/admin/blog','AdminController@insertBlog');
+Route::get('/admin/blog/delete/{id}','BlogController@deleteBlog');
+Route::get('/admin/blog/edit/{id}','BlogController@editBlog');
+Route::post('/admin/blog/edit/{id}','BlogController@updateBlog');
 
 //login
 Route::get('/login', "loginController@index");
