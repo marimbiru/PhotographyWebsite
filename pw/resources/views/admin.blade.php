@@ -195,7 +195,7 @@
                         <p>{{ $contacts->email }}</p>
                     </td>
                     <td class="info">
-                        <p>{{ $contacts->description }}</p>
+                        <p>{{ $contacts->message }}</p>
                     </td>
                 </tr>
                 @endforeach
