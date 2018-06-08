@@ -33,6 +33,11 @@ Route::get('/contact', function () {
     return view('welcome');
 });
 
+//About
+Route::get('/about', function () {
+    return view('about');
+});
+
 //Admin
 Route::get('/admin', function () {
     return view('admin');

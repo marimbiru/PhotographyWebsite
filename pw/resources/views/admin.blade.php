@@ -176,6 +176,34 @@
         </div>
 
 
+        <!--CONTACTS-->
+
+        <div id="contacts" class="tabcontent">
+
+            <table>
+
+                <h2>Messages</h2>
+
+                @foreach($contacts as $contacts)
+                <tr>
+                    <td class="info">
+                        <p style="float: right;">{{ $contacts->created_at }}</p>
+                        <p>{{ $contacts->name }}</p>
+
+                    </td>
+                    <td class="info">
+                        <p>{{ $contacts->email }}</p>
+                    </td>
+                    <td class="info">
+                        <p>{{ $contacts->description }}</p>
+                    </td>
+                </tr>
+                @endforeach
+
+            </table>
+
+        </div>
+
 
         <!--SKILLS-->
 

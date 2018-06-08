@@ -4,8 +4,9 @@
         <div class="content">
 
             <!-- website logo -->
-            <img class="website-logo" src="/images/website-logo.png" />
-
+            <a href="/">
+                <img class="website-logo" src="/images/website-logo.png" />
+            </a>
             <!-- site links -->
             <div class="site-links-box">
 
@@ -18,9 +19,12 @@
                     </a>
                     <a href="/gallery">
                         <p>Gallery</p>
-                    </a>
+                    </a>  
                     <a href="/blog">
                         <p>Blog</p>
+                    </a>
+                    <a href="/about">
+                        <p>About</p>
                     </a>
                     <a href="/contact">
                         <p id="contact-header-link">Contact</p>
@@ -43,6 +47,7 @@
         <a href="/services">Our Services</a>
         <a href="/gallery">Gallery</a>
         <a href="/blog">Blog</a>
+        <a href="/about">About</a>
         <a href="/contact">Contact</a>
     </div>
 
