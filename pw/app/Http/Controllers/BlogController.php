@@ -64,6 +64,7 @@ class BlogController extends Controller
         $delete_blog->delete();
 
         Storage::delete('storage/blog-coverphotos/'.$image_name);
+        return redirect('/admin');        
     }
 
     public function editBlog($id){
@@ -109,11 +110,11 @@ class BlogController extends Controller
 
         if ($new_image!=NULL) {
             $new_filename= seoUrl($title).'.'. $new_image->getClientOriginalExtension();
-            Storage::disk('public')->put("blog-coverphotos/".$image_filename, file_get_contents($blog_image));
+            Storage::disk('public')->put("blog-coverphotos/".$new_filename, file_get_contents($new_image));
             $update_blog->cover_photo=$new_filename;
         }
         
-        $update_blog->save;
+        $update_blog->save();
         return redirect('/admin');        
     }
 }
