@@ -30,11 +30,11 @@
     <div class="blog-container-main">
     	<div class="blog-container-content">
             <div class="banner-image">
-                <img src="public/blog-coverphotos/{{$blog->cover_photo}}" alt="">
+                <img class="content-middle" src="{{ asset('storage/blog-coverphotos/'.$blog->cover_photo) }}" alt="">
             </div>
     		<div class="blog-content-header" style="text-decoration-color: salmon;">
                 <h1 class="blog-title">{{$blog->title}}</h1>
-                <p>Posted on: {{$blog->created_at}} in category: {{$category}}</p>
+                <p>Posted on: {{$blog->created_at}} in category:<b> {{$category}}</b></p>
     		</div>
     		<div class="blog-content-body">
     			<div class="blog-content-text">

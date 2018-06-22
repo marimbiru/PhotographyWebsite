@@ -20,19 +20,20 @@
 .blog-card
 {
     width:85%;
-    height: 700px;
+    height: auto;
     margin: auto;
     margin-top: 50px;
     top: 25%;
     display: -webkit-box;
     -webkit-box-orient:vertical;
     border-radius:10px,10px,10px,10px;
-    box-shadow: 5px 5px 5px;   
+    box-shadow: 0 0 5px rgba(80, 79, 79, 0.2);   
 }
 .blog-card-image
 {
     width: auto;
-    height: 70%;
+    min-height: 15em;
+    object-fit: cover;
     background-repeat: none;
     background-position: center;
     background-size: cover;
@@ -40,10 +41,10 @@
 
 .blog-card-desc
 {
-    padding: 7%;
+    padding: 1.5em 1em;
     width: auto;
     height: auto;
-    background-color: black;
+    background-color: #f0f0f0;
 }
 
 .blog-card-desc a
@@ -150,7 +151,6 @@
     border-bottom-width: 2px;
 }
 .blog-content-header{
-    padding: 1em;
     width: inherit;
     height: auto
 }
@@ -160,13 +160,13 @@
     height: auto;
 }
 .blog-content-text{
-    width: 80%;
+    width: 100%;
     margin:auto;
     height: auto;
 }
 .banner-image{
-    height:200px;
-    width:inherit;
+    min-height: 5em;
+    width:auto;
 }
 
 .blog-title{
@@ -182,14 +182,13 @@
     height: 400px;
 }
 .blog-container-footer{
-    margin: 50px;
     padding-top: 40px;
     width: inherit;
     height: auto;
 }
 .blog-container-link{
     margin: auto;
-    width: 80%;
+    width: 100%;
     display: -webkit-box;
     -webkit-box-orient:horizontal;
 }
@@ -214,3 +213,9 @@
 
 
 /*Blog Design*/
+
+.content-middle{
+    width: 100%;
+    height: auto;
+    margin: auto;
+}

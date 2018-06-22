@@ -50,12 +50,13 @@ class BlogController extends Controller
     }
 
     public function deleteBlog($id){
-        $delete_blog=blog::find($id);
-        $image_name=$delete_blog->cover_photo;
+
+        $delete_blog = blog::find($id);
+        $image_name = $delete_blog->cover_photo;
         
         $delete_blog->delete();
 
-        Storage::delete('public/blog-coverphotos/'.$image_name);
+        Storage::delete('storage/blog-coverphotos/'.$image_name);
     }
 
     public function editBlog($id){
