@@ -219,3 +219,16 @@
     height: auto;
     margin: auto;
 }
+
+a{
+    color: white;
+    text-decoration: none;
+    text-decoration-style: none;
+}
+
+a:focus,
+a:active{
+    color: tomato;
+    text-decoration: none;
+    text-decoration-style: none;
+}

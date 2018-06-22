@@ -26,9 +26,9 @@
 	<div class="blog-parent">
 		<div class="blog-main">
             <h1 style="color: salmon; text-align: center">Blog</h1>
-            @if ($category!=null)
+            @if (!empty($category))
             <h5>Filtering by {{$category->category_name}}</h5>
-            <a href="/blog">clear filter</a>    
+            <a style="color:tomato" href="/blog">clear filter</a>    
             @endif
                         
             @foreach ($blogs as $blog)
@@ -36,7 +36,7 @@
                 <div class="blog-card-image" style="background-image: url('{{asset('storage/blog-coverphotos/'.$blog->cover_photo)}}');">
                     </div>
                     <div class="blog-card-desc">
-						<h3 style="margin: 2px; padding: 0px;"><a href="blog/{{$blog->id}}">{{$blog->title}}</a></h3>
+						<h3 style="margin: 2px; padding: 0px;"><a href="/blog/{{$blog->id}}">{{$blog->title}}</a></h3>
                         <div class="blog-card-desc-text">
                             <p>Created on: {{$blog->created_at}}</p>
                             <p>{{str_limit($blog->body_text,$limit=100,' ...')}}</p>
@@ -55,11 +55,11 @@
 					@foreach ($categories as $category)
 	
 					<div class="mini-card">
-						<img src="{{asset('images/category-photo/')}}{{"/".$category->category_photo}}">
+						<img src="{{asset('storage/category-photo/'.$category->category_photo)}}"/>
 
 						<div class="mini-card-back">
 							<div class="mini-card-text">
-                                <a href="blog/category/{{$category->id}}"><h2>{{$category->category_name}}</h2></a>
+                                <a href="/blog/category/{{$category->id}}"><h2>{{$category->category_name}}</h2></a>
 							</div>
 						</div>
 					</div>
@@ -68,5 +68,8 @@
 			</div>
 		</div>
     </div>
+    <br><br>
+    <!--footer template-->
+    @include('templates.footer')
 </body>
 </html>

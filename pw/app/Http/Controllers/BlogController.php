@@ -14,33 +14,33 @@ class BlogController extends Controller
         $category=blog_categories::find($blog->id);
         $category_name=$category->category_name;
 
-        $prev_id="";
-        $prev_title="";
-        $next_id="";
-        $next_title="";
+        // $prev_id="";
+        // $prev_title="";
+        // $next_id="";
+        // $next_title="";
 
-        $last=blog::latest()->first();
-        $last_id=$last->id;
+        // $last=blog::latest()->first();
+        // $last_id=$last->id;
 
-        if($id>1){
-            $prev_id=$id-1;
-            $prev=blog::find($prev_id);
-            $prev_title=$prev->title;
-        }else{
-            $prev_title="No previous blog";
-        }
+        // if($id>1){
+        //     $prev_id=$id-1;
+        //     $prev=blog::find($prev_id);
+        //     $prev_title=$prev->title;
+        // }else{
+        //     $prev_title="No previous blog";
+        // }
 
-        if($id<$last_id){
-            $next_id=$id+1;
-            $next=blog::find($next_id);
-            $next_title=$next->title;
-        }else{
-            $next_title="No next blog";
-        }
+        // if($id<$last_id){
+        //     $next_id=$id+1;
+        //     $next=blog::find($next_id);
+        //     $next_title=$next->title;
+        // }else{
+        //     $next_title="No next blog";
+        // }
 
 
 
-        return view('blog_post',['blog'=>$blog,'category'=>$category_name,'next_id'=>$next_id,'next_title'=>$next_title,'prev_id'=>$prev_id,'prev_title'=>$prev_title]);
+        return view('blog_post',['blog'=>$blog,'category'=>$category_name]);
     }
 
     public function show_all(){
@@ -50,9 +50,9 @@ class BlogController extends Controller
     }
 
     public function filtercategory($id){
-        $blog=blog::where('category_id',$id)->get();
+        $blogs=blog::where('category_id',$id)->get();
         $categories=blog_categories::all();
-        $catrgory=blog_categories::where('id',$id)->get();
+        $category=blog_categories::select('category_name')->where('id',$id)->first();
         return view('blog',['blogs'=>$blogs,'categories'=>$categories,'category'=>$category]);
     }
 

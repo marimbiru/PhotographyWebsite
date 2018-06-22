@@ -42,7 +42,7 @@
     			</div>
     		</div>
     	</div>
-    	<div class="blog-container-footer">
+    	{{--  <div class="blog-container-footer">
             <div class="blog-container-link">
         		<div class="blog-container-link-left">
                     <h3>Previous:</h3>
@@ -55,8 +55,11 @@
             </div>
     		<div class="blog-container-footer-category">
     			
-    		</div>
+    		</div>  --}}
     	</div>
     </div>
+    <br><br>
+    <!--footer template-->
+    @include('templates.footer')
 </body>
 </html>
