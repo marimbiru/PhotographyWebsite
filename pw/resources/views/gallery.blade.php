@@ -74,7 +74,7 @@
                 </div>
 
                 @foreach($gallery_images as $gallery_image)
-                    <img id="gallery-image-{{$gallery_image->id}}" class="gallery-image" src="{{ asset('images/'.$gallery_image->category.'/'.$gallery_image->text) }}" />
+                    <img id="gallery-image-{{$gallery_image->id}}" class="gallery-image" src="{{ asset('storage/'.$gallery_image->category.'/'.$gallery_image->text) }}" />
                 @endforeach
             </div>
 
