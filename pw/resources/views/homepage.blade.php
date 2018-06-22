@@ -45,7 +45,9 @@
 
                 </p>
 
-                <button class="btn-contact-trigger"> work with us</button>
+                <a href="/contact">
+                    <button class="btn-contact-trigger"> work with us</button>
+                </a>
 
                 <div class="down-arrow-box">
                     <p>what we do</p>
@@ -206,7 +208,7 @@
 
                 <!-- client logo image -->
                 @foreach($client_logos as $client_logo)
-                <img class="client-logo" src="{{ asset('storage/reference/'.$client_logo->image_name) }}" />
+                <img class="client-logo" src="{{ asset('/storage/reference/'.$client_logo->image_name) }}" />
                 @endforeach
 
             </div>
@@ -223,7 +225,9 @@
         <!-- bg image -->
         <img src="/images/work-with-us-image.jpg" />
 
-        <button class="btn-contact-trigger"> work with us</button>
+        <a href="/contact">
+            <button class="btn-contact-trigger"> work with us</button>
+        </a>
 
     </div>
 
