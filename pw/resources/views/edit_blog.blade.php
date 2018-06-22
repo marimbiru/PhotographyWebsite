@@ -42,7 +42,7 @@
             <form method="POST" action="/admin/blog/edit/{{ $blog->id }}" enctype="multipart/form-data">
             {{csrf_field()}}
 
-                <img src="{{ asset('images/blog-coverphotos/'.$blog->cover_photo) }}" />
+                <img src="{{ asset('storage/blog-coverphotos/'.$blog->cover_photo) }}" />
 
             <input type="hidden" value="{{$blog->id}}" name="id">
                 <div>

@@ -90,7 +90,7 @@
 
                 @foreach($gallery as $gallery_item)
                 <tr>
-                    <td><img src="{{ asset('images/'.$gallery_item->category.'/'.$gallery_item->text) }}"/></td>
+                    <td><img src="{{ asset('storage/'.$gallery_item->category.'/'.$gallery_item->text) }}"/></td>
                     <td class="info">
                         <h3 class="portfolio-title"></h3>
                         <p class="portfolio-description">{{ $gallery_item->text }}<br><span class="portfolio-date">{{ $gallery_item->created_at }}</span></p>
@@ -160,7 +160,7 @@
                 </tr>
                 @foreach ($blogs as $blog)    
                     <tr>
-                    <td><img src="{{asset('images/blog-coverphotos/'.$blog->cover_photo)}}" /></td>
+                    <td><img src="{{asset('storage/blog-coverphotos/'.$blog->cover_photo)}}" /></td>
                         <td class="info">
                             <h3 class="portfolio-title">{{$blog->title}}</h3>
                         <p class="portfolio-description">{{str_limit($blog->body_text,$limit=200,' ...')}}<br><span class="portfolio-date">{{$blog->created_at}}</span></p>
@@ -331,7 +331,7 @@
     
                     @foreach($references as $reference)
                     <tr>
-                        <td><img src="{{asset('images/reference/'.$reference->image_name)}}"/></td>
+                        <td><img src="{{asset('storage/reference/'.$reference->image_name)}}"/></td>
                         <td class="info">
                             <h3 class="portfolio-title">{{ $reference->company_name }}</h3>
                             <a href="/admin/reference/remove/{{ $reference->image_name }}"><button class="submit-button">Delete</button></a>
