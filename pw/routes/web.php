@@ -26,6 +26,7 @@ Route::get('/services', "ClientQuotesController@index");
 //Blog
 Route::get('/blog','BlogController@show_all');
 Route::get('/blog/{id}','BlogController@index');
+Route::get('blog/category/{id}','BlogController@filtercategory');
 
 //Contact
 Route::get('/contact', function () {

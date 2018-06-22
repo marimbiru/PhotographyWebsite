@@ -49,6 +49,13 @@ class BlogController extends Controller
         return view('blog',['blogs'=>$blogs,'categories'=>$categories]);        
     }
 
+    public function filtercategory($id){
+        $blog=blog::where('category_id',$id)->get();
+        $categories=blog_categories::all();
+        $catrgory=blog_categories::where('id',$id)->get();
+        return view('blog',['blogs'=>$blogs,'categories'=>$categories,'category'=>$category]);
+    }
+
     public function deleteBlog($id){
         $delete_blog=blog::find($id);
         $image_name=$delete_blog->cover_photo;

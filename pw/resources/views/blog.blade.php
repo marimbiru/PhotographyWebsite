@@ -26,10 +26,14 @@
 	<div class="blog-parent">
 		<div class="blog-main">
             <h1 style="color: salmon; text-align: center">Blog</h1>
-            
+            @if ($category!=null)
+            <h5>Filtering by {{$category->category_name}}</h5>
+            <a href="/blog">clear filter</a>    
+            @endif
+                        
             @foreach ($blogs as $blog)
                 <div class="blog-card">
-                <div class="blog-card-image" style="background-image: url('/images/{{$blog->cover_photo}}');">
+                <div class="blog-card-image" style="background-image: url('public/blog-coverphotos/{{$blog->cover_photo}}');">
                     </div>
                     <div class="blog-card-desc">
 						<h3 style="margin: 2px; padding: 0px;"><a href="blog/{{$blog->id}}">{{$blog->title}}</a></h3>
@@ -55,7 +59,7 @@
 
 						<div class="mini-card-back">
 							<div class="mini-card-text">
-								<h2>{{$category->category_name}}</h2>
+                                <a href="blog/category/{{$category->id}}"><h2>{{$category->category_name}}</h2></a>
 							</div>
 						</div>
 					</div>
