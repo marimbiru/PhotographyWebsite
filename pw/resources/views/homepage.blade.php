@@ -208,7 +208,7 @@
 
                 <!-- client logo image -->
                 @foreach($client_logos as $client_logo)
-                <img class="client-logo" src="{{ asset('/storage/reference/'.$client_logo->image_name) }}" />
+                <img class="client-logo" src="{{ asset('images/reference/'.$client_logo->image_name) }}" />
                 @endforeach
 
             </div>

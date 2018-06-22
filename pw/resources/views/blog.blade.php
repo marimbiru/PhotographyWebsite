@@ -29,7 +29,7 @@
             
             @foreach ($blogs as $blog)
                 <div class="blog-card">
-                <div class="blog-card-image" style="background-image: url('assets/images/{{$blog->cover_photo}}');">
+                <div class="blog-card-image" style="background-image: url('/images/{{$blog->cover_photo}}');">
                     </div>
                     <div class="blog-card-desc">
 						<h3 style="margin: 2px; padding: 0px;"><a href="blog/{{$blog->id}}">{{$blog->title}}</a></h3>
@@ -51,7 +51,7 @@
 					@foreach ($categories as $category)
 	
 					<div class="mini-card">
-						<img src="public/category-photo/{{asset('storage/category-photo'.$category->category_photo)}}">
+						<img src="public/category-photo/{{asset('images/category-photo'.$category->category_photo)}}">
 
 						<div class="mini-card-back">
 							<div class="mini-card-text">

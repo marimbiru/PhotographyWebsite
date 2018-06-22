@@ -42,7 +42,7 @@
             <form method="POST" action="/admin/gallery/edit/{{ $gallery_item->id }}" enctype="multipart/form-data">
             {{csrf_field()}}
 
-                <img src="{{ asset('storage/'.$gallery_item->category.'/'.$gallery_item->text) }}" />
+                <img src="{{ asset('images/'.$gallery_item->category.'/'.$gallery_item->text) }}" />
 
                 <div>
                     <p>New or change image</p>
