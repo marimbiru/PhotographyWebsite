@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Storage;
 use App\blog;
 use App\blog_categories;
 use Illuminate\Http\Request;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2018 at 08:01 AM
+-- Generation Time: Jun 22, 2018 at 10:59 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -43,7 +43,11 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`id`, `title`, `body_text`, `cover_photo`, `category_id`, `created_at`, `updated_at`) VALUES
-(1, 'The Last Of Us', 'sdfghjk', 'the-last-of-us.png', 1, '2018-06-22 02:35:53', '2018-06-22 02:35:53');
+(2, 'We Happy Few', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at blandit nunc, eget varius dolor. In congue tristique volutpat. Vestibulum consectetur rhoncus tortor ac ullamcorper. Suspendisse sodales risus imperdiet est tincidunt finibus. Morbi vel dui ante. Donec commodo euismod pellentesque. Praesent id mi purus.\r\n\r\nMauris sed euismod arcu, a lacinia metus. Donec aliquam lacus urna, non convallis neque venenatis eget. Nunc sollicitudin nec leo id convallis. Nullam mollis consectetur consectetur. Morbi vitae rhoncus orci. Mauris maximus enim id mi luctus tristique sit amet et quam. Proin magna mi, blandit sit amet dolor in, pharetra iaculis odio. Pellentesque lectus dui, semper ultricies urna quis, elementum consectetur urna. Nulla efficitur dapibus nibh, in sollicitudin dui lobortis eget. Sed mattis odio sit amet urna porta, ut fermentum dolor ultrices. Aliquam suscipit nisi eget eros porta pharetra.\r\n\r\nInteger bibendum urna pellentesque tellus ultricies pulvinar in vel felis. Duis vel tristique eros. Nulla placerat blandit tristique. In hac habitasse platea dictumst. Maecenas lacinia, nisl sit amet imperdiet finibus, sem sapien rutrum ante, id ornare turpis nunc vel nisi. Quisque blandit metus in purus ultricies, at maximus tortor cursus. Nulla nisi ipsum, suscipit sed nulla maximus, posuere ullamcorper magna. Duis sed laoreet nunc, vel luctus risus. Duis consequat libero ut gravida pellentesque. Maecenas mi sem, pulvinar at ornare et, bibendum at ligula. Maecenas dapibus, justo sit amet aliquam tristique, risus justo gravida nibh, eget tempus orci mi sed sapien. Pellentesque pretium dictum placerat. Nulla et dolor pellentesque, tincidunt arcu ut, lobortis magna.', 'we-happy-few.jpg', 2, '2018-06-22 05:25:10', '2018-06-22 05:25:10'),
+(3, 'We Happy Few 2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at blandit nunc, eget varius dolor. In congue tristique volutpat. Vestibulum consectetur rhoncus tortor ac ullamcorper. Suspendisse sodales risus imperdiet est tincidunt finibus. Morbi vel dui ante. Donec commodo euismod pellentesque. Praesent id mi purus.\r\n\r\nMauris sed euismod arcu, a lacinia metus. Donec aliquam lacus urna, non convallis neque venenatis eget. Nunc sollicitudin nec leo id convallis. Nullam mollis consectetur consectetur. Morbi vitae rhoncus orci. Mauris maximus enim id mi luctus tristique sit amet et quam. Proin magna mi, blandit sit amet dolor in, pharetra iaculis odio. Pellentesque lectus dui, semper ultricies urna quis, elementum consectetur urna. Nulla efficitur dapibus nibh, in sollicitudin dui lobortis eget. Sed mattis odio sit amet urna porta, ut fermentum dolor ultrices. Aliquam suscipit nisi eget eros porta pharetra.\r\n\r\nInteger bibendum urna pellentesque tellus ultricies pulvinar in vel felis. Duis vel tristique eros. Nulla placerat blandit tristique. In hac habitasse platea dictumst. Maecenas lacinia, nisl sit amet imperdiet finibus, sem sapien rutrum ante, id ornare turpis nunc vel nisi. Quisque blandit metus in purus ultricies, at maximus tortor cursus. Nulla nisi ipsum, suscipit sed nulla maximus, posuere ullamcorper magna. Duis sed laoreet nunc, vel luctus risus. Duis consequat libero ut gravida pellentesque. Maecenas mi sem, pulvinar at ornare et, bibendum at ligula. Maecenas dapibus, justo sit amet aliquam tristique, risus justo gravida nibh, eget tempus orci mi sed sapien. Pellentesque pretium dictum placerat. Nulla et dolor pellentesque, tincidunt arcu ut, lobortis magna.', 'we-happy-few-2.jpg', 2, '2018-06-22 05:37:56', '2018-06-22 05:37:56'),
+(4, 'The Last Of Us', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at blandit nunc, eget varius dolor. In congue tristique volutpat. Vestibulum consectetur rhoncus tortor ac ullamcorper. Suspendisse sodales risus imperdiet est tincidunt finibus. Morbi vel dui ante. Donec commodo euismod pellentesque. Praesent id mi purus.\r\n\r\nMauris sed euismod arcu, a lacinia metus. Donec aliquam lacus urna, non convallis neque venenatis eget. Nunc sollicitudin nec leo id convallis. Nullam mollis consectetur consectetur. Morbi vitae rhoncus orci. Mauris maximus enim id mi luctus tristique sit amet et quam. Proin magna mi, blandit sit amet dolor in, pharetra iaculis odio. Pellentesque lectus dui, semper ultricies urna quis, elementum consectetur urna. Nulla efficitur dapibus nibh, in sollicitudin dui lobortis eget. Sed mattis odio sit amet urna porta, ut fermentum dolor ultrices. Aliquam suscipit nisi eget eros porta pharetra.\r\n\r\nInteger bibendum urna pellentesque tellus ultricies pulvinar in vel felis. Duis vel tristique eros. Nulla placerat blandit tristique. In hac habitasse platea dictumst. Maecenas lacinia, nisl sit amet imperdiet finibus, sem sapien rutrum ante, id ornare turpis nunc vel nisi. Quisque blandit metus in purus ultricies, at maximus tortor cursus. Nulla nisi ipsum, suscipit sed nulla maximus, posuere ullamcorper magna. Duis sed laoreet nunc, vel luctus risus. Duis consequat libero ut gravida pellentesque. Maecenas mi sem, pulvinar at ornare et, bibendum at ligula. Maecenas dapibus, justo sit amet aliquam tristique, risus justo gravida nibh, eget tempus orci mi sed sapien. Pellentesque pretium dictum placerat. Nulla et dolor pellentesque, tincidunt arcu ut, lobortis magna.', 'the-last-of-us.jpg', 3, '2018-06-22 05:38:27', '2018-06-22 05:38:27'),
+(5, 'End of the Line', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at blandit nunc, eget varius dolor. In congue tristique volutpat. Vestibulum consectetur rhoncus tortor ac ullamcorper. Suspendisse sodales risus imperdiet est tincidunt finibus. Morbi vel dui ante. Donec commodo euismod pellentesque. Praesent id mi purus.\r\n\r\nMauris sed euismod arcu, a lacinia metus. Donec aliquam lacus urna, non convallis neque venenatis eget. Nunc sollicitudin nec leo id convallis. Nullam mollis consectetur consectetur. Morbi vitae rhoncus orci. Mauris maximus enim id mi luctus tristique sit amet et quam. Proin magna mi, blandit sit amet dolor in, pharetra iaculis odio. Pellentesque lectus dui, semper ultricies urna quis, elementum consectetur urna. Nulla efficitur dapibus nibh, in sollicitudin dui lobortis eget. Sed mattis odio sit amet urna porta, ut fermentum dolor ultrices. Aliquam suscipit nisi eget eros porta pharetra.\r\n\r\nInteger bibendum urna pellentesque tellus ultricies pulvinar in vel felis. Duis vel tristique eros. Nulla placerat blandit tristique. In hac habitasse platea dictumst. Maecenas lacinia, nisl sit amet imperdiet finibus, sem sapien rutrum ante, id ornare turpis nunc vel nisi. Quisque blandit metus in purus ultricies, at maximus tortor cursus. Nulla nisi ipsum, suscipit sed nulla maximus, posuere ullamcorper magna. Duis sed laoreet nunc, vel luctus risus. Duis consequat libero ut gravida pellentesque. Maecenas mi sem, pulvinar at ornare et, bibendum at ligula. Maecenas dapibus, justo sit amet aliquam tristique, risus justo gravida nibh, eget tempus orci mi sed sapien. Pellentesque pretium dictum placerat. Nulla et dolor pellentesque, tincidunt arcu ut, lobortis magna.', 'end-of-the-line.jpg', 3, '2018-06-22 05:39:42', '2018-06-22 05:39:42'),
+(6, 'World Economic Forum', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at blandit nunc, eget varius dolor. In congue tristique volutpat. Vestibulum consectetur rhoncus tortor ac ullamcorper. Suspendisse sodales risus imperdiet est tincidunt finibus. Morbi vel dui ante. Donec commodo euismod pellentesque. Praesent id mi purus.\r\n\r\nMauris sed euismod arcu, a lacinia metus. Donec aliquam lacus urna, non convallis neque venenatis eget. Nunc sollicitudin nec leo id convallis. Nullam mollis consectetur consectetur. Morbi vitae rhoncus orci. Mauris maximus enim id mi luctus tristique sit amet et quam. Proin magna mi, blandit sit amet dolor in, pharetra iaculis odio. Pellentesque lectus dui, semper ultricies urna quis, elementum consectetur urna. Nulla efficitur dapibus nibh, in sollicitudin dui lobortis eget. Sed mattis odio sit amet urna porta, ut fermentum dolor ultrices. Aliquam suscipit nisi eget eros porta pharetra.\r\n\r\nInteger bibendum urna pellentesque tellus ultricies pulvinar in vel felis. Duis vel tristique eros. Nulla placerat blandit tristique. In hac habitasse platea dictumst. Maecenas lacinia, nisl sit amet imperdiet finibus, sem sapien rutrum ante, id ornare turpis nunc vel nisi. Quisque blandit metus in purus ultricies, at maximus tortor cursus. Nulla nisi ipsum, suscipit sed nulla maximus, posuere ullamcorper magna. Duis sed laoreet nunc, vel luctus risus. Duis consequat libero ut gravida pellentesque. Maecenas mi sem, pulvinar at ornare et, bibendum at ligula. Maecenas dapibus, justo sit amet aliquam tristique, risus justo gravida nibh, eget tempus orci mi sed sapien. Pellentesque pretium dictum placerat. Nulla et dolor pellentesque, tincidunt arcu ut, lobortis magna.', 'world-economic-forum.jpg', 4, '2018-06-22 05:41:11', '2018-06-22 05:41:11');
 
 -- --------------------------------------------------------
 
@@ -64,7 +68,9 @@ CREATE TABLE `blog_categories` (
 --
 
 INSERT INTO `blog_categories` (`id`, `category_name`, `category_photo`, `created_at`, `updated_at`) VALUES
-(1, 'project test test', 'the-last-of-us.png', '2018-06-22 02:35:53', '2018-06-22 02:35:53');
+(2, 'Wedding', 'we-happy-few.jpg', '2018-06-22 05:25:10', '2018-06-22 05:25:10'),
+(3, 'Love of Life', 'the-last-of-us.jpg', '2018-06-22 05:38:27', '2018-06-22 05:38:27'),
+(4, 'Politics', 'world-economic-forum.jpg', '2018-06-22 05:41:11', '2018-06-22 05:41:11');
 
 -- --------------------------------------------------------
 
@@ -159,10 +165,25 @@ CREATE TABLE `gallery` (
 --
 
 INSERT INTO `gallery` (`id`, `category`, `text`, `created_at`, `updated_at`) VALUES
-(28, 'cinematography', 'cinematography-1528191349.jpg', '2018-06-05 06:35:49', '2018-06-05 06:35:49'),
-(29, 'corporate', 'corporate-1528197641.jpg', '2018-06-05 08:20:41', '2018-06-05 08:20:41'),
-(31, 'product', 'product-1528199618.jpg', '2018-06-05 08:53:38', '2018-06-05 08:53:38'),
-(32, 'product', 'product-1528210790.jpg', '2018-06-05 11:59:50', '2018-06-05 11:59:50');
+(40, 'cinematography', 'cinematography-1529653524.jpg', '2018-06-22 04:45:24', '2018-06-22 04:45:24'),
+(41, 'cinematography', 'cinematography-1529653562.jpg', '2018-06-22 04:46:02', '2018-06-22 04:46:02'),
+(42, 'cinematography', 'cinematography-1529653594.jpg', '2018-06-22 04:46:34', '2018-06-22 04:46:34'),
+(43, 'cinematography', 'cinematography-1529653667.jpg', '2018-06-22 04:47:47', '2018-06-22 04:47:47'),
+(44, 'corporate', 'corporate-1529653678.jpg', '2018-06-22 04:47:59', '2018-06-22 04:47:59'),
+(45, 'corporate', 'corporate-1529653705.jpg', '2018-06-22 04:48:25', '2018-06-22 04:48:25'),
+(46, 'corporate', 'corporate-1529653712.jpg', '2018-06-22 04:48:32', '2018-06-22 04:48:32'),
+(47, 'corporate', 'corporate-1529653751.jpg', '2018-06-22 04:49:11', '2018-06-22 04:49:11'),
+(48, 'documentary', 'documentary-1529653762.jpg', '2018-06-22 04:49:22', '2018-06-22 04:49:22'),
+(49, 'documentary', 'documentary-1529653769.jpg', '2018-06-22 04:49:29', '2018-06-22 04:49:29'),
+(50, 'documentary', 'documentary-1529653778.jpg', '2018-06-22 04:49:38', '2018-06-22 04:49:38'),
+(51, 'corporate', 'corporate-1529653782.jpg', '2018-06-22 04:49:42', '2018-06-22 04:49:42'),
+(52, 'wedding', 'wedding-1529653809.jpg', '2018-06-22 04:50:09', '2018-06-22 04:50:09'),
+(53, 'wedding', 'wedding-1529653816.jpg', '2018-06-22 04:50:16', '2018-06-22 04:50:16'),
+(54, 'wedding', 'wedding-1529653823.jpg', '2018-06-22 04:50:23', '2018-06-22 04:50:23'),
+(55, 'product', 'product-1529653839.jpg', '2018-06-22 04:50:39', '2018-06-22 04:50:39'),
+(56, 'product', 'product-1529653848.jpg', '2018-06-22 04:50:48', '2018-06-22 04:50:48'),
+(57, 'product', 'product-1529653855.jpg', '2018-06-22 04:50:55', '2018-06-22 04:50:55'),
+(58, 'product', 'product-1529653865.jpg', '2018-06-22 04:51:05', '2018-06-22 04:51:05');
 
 -- --------------------------------------------------------
 
@@ -324,13 +345,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `blog_categories`
 --
 ALTER TABLE `blog_categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `client_logos`
@@ -354,7 +375,7 @@ ALTER TABLE `contacts`
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `migrations`
