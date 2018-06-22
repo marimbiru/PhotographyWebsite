@@ -29,11 +29,7 @@
             
             @foreach ($blogs as $blog)
                 <div class="blog-card">
-<<<<<<< HEAD
                 <div class="blog-card-image" style="background-image: url('{{asset('storage/blog-coverphotos/'.$blog->cover_photo)}}');">
-=======
-                <div class="blog-card-image" style="background-image: url('{{asset('images/blog-coverphotos/')}}{{"/".$blog->cover_photo}}');">
->>>>>>> bb6bfb29aae1760e28a544e53069cabba51f299a
                     </div>
                     <div class="blog-card-desc">
 						<h3 style="margin: 2px; padding: 0px;"><a href="blog/{{$blog->id}}">{{$blog->title}}</a></h3>
